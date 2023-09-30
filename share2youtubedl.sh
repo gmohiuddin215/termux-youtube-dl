@@ -30,22 +30,14 @@ function isSponsorblockAlive() {
 function downloadVideo() {
     echo -e "\\nDownloading video...\\n"
     yt-dlp --config-locations "${CONFIG_PATH}config" -F "$1"
-    echo_warning "Choose your video quality (<enter> for: 'best'):"
+    echo_warning "Choose video quality (<enter> for: 'best'):"
     read -p "" video
-    echo_warning "Choose your audio quality (<enter> for: 'best'):"
-    read -p "" audio
-    echo_warning "Input video name:"
-    read -p "" name
 
     if [[ "$video" = "" ]]; then
         video="best"
     fi
-    if [[ "$audio" = "" ]]; then
-        audio="best"
-    fi
-    if [[ "$name" = "" ]]; then
-        name="%(title).40s [%(id)s].%(ext)s"
-    fi
+    audio="best"
+    name="%(title).40s [%(id)s].%(ext)s"
     if isSponsorblockAlive; then
         # sucess
         yt-dlp --config-locations "${CONFIG_PATH}sponsorblock.conf" -o "$name" -f "$video"+"$audio" "$1"
@@ -87,10 +79,10 @@ function downloadAudio() {
 if [[ "$1" =~ ^.*youtu.*$ ]] || [[ "$1" =~ ^.*youtube.*$ ]]; then
     echo_bold "Downloading...\\n>URL: ${1}"
     echo_warning "Choose between the following options:"
-    echo_bold "1. Video mode (choose quality and name)"
-    echo_bold "2. Playlist mode"
-    echo_bold "3. Channel mode"
-    echo_bold "4. Audio only mode"
+    echo_bold "1. Video"
+    echo_bold "2. Playlist"
+    echo_bold "3. Channel"
+    echo_bold "4. Audio"
 
     echo_warning "Enter your choice:"
     read -p "" choice
