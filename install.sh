@@ -7,7 +7,7 @@ YOUTUBEDL_OUTPUT_FOLDER="${HOME}/storage/shared/Youtube-DL"
 YOUTUBEDL_CONFIG_FOLDER="${HOME}/.config/yt-dlp/"
 TERMUXURLOPENER_CONFIG_FOLDER="${HOME}/bin/"
 
-echo "Hi, This script setup an environment to download various videos from various apps"
+echo "Hi, This script sets up an environment to download various videos from various apps"
 sleep 1
 echo -e "\n\n${BLUE}Requirements :"
 echo -e "${NC}    1. Allow storage access to Termux"
