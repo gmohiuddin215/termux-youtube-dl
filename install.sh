@@ -15,11 +15,11 @@ echo -e "${NC}    2. A working internet connection.\n\n"
 read -p "When you are ready just press enter:"
 
 # Basic setup
-# termux-setup-storage
+termux-setup-storage
 sleep 2
-# pkg update
-# pkg install python ffmpeg
-# pip install yt-dlp
+pkg update
+pkg install python ffmpeg
+pip install yt-dlp
 mkdir -p $YOUTUBEDL_OUTPUT_FOLDER
 mkdir -p $YOUTUBEDL_CONFIG_FOLDER
 mkdir -p $TERMUXURLOPENER_CONFIG_FOLDER
