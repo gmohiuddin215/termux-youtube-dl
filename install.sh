@@ -16,7 +16,6 @@ read -p "When you are ready just press enter:"
 
 # Basic setup
 termux-setup-storage
-sleep 2
 pkg update
 pkg install python ffmpeg
 pip install yt-dlp
